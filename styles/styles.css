@@ -29,7 +29,7 @@
 }
 
 @-webkit-keyframes fade {
-  0%, 20% {
+  0%, 40% {
     opacity: 0;
   }
   100% {
@@ -38,7 +38,7 @@
 }
 
 @keyframes fade {
-  0%, 20% {
+  0%, 40% {
     opacity: 0;
   }
   100% {
@@ -93,14 +93,15 @@ body {
 body .ask-player {
   position: absolute;
   text-align: center;
-  background: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/03d6d1a5-7133-460b-a65f-b403f180281d/d5vi8b0-9925c151-97d4-4318-8a23-af91c8f561d5.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzAzZDZkMWE1LTcxMzMtNDYwYi1hNjVmLWI0MDNmMTgwMjgxZFwvZDV2aThiMC05OTI1YzE1MS05N2Q0LTQzMTgtOGEyMy1hZjkxYzhmNTYxZDUuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.SfgmKdiABXpQz-k-iP3SigdD7kEKyW751j81SvoZD3Y);
-  background-position: 8% 0%;
+  background-color: white;
   width: 50vh;
   height: 30vh;
   border-radius: 50px;
   margin: 17vh 61vh;
   -webkit-animation: bounce 2s ease;
           animation: bounce 2s ease;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
   -webkit-box-shadow: 0 0 50px rgba(0, 0, 0, 0.479);
           box-shadow: 0 0 50px rgba(0, 0, 0, 0.479);
   display: block;
@@ -110,7 +111,7 @@ body .ask-player {
 body .ask-player h3 {
   font-family: 'Finger Paint', cursive;
   color: black;
-  padding-top: 50px;
+  padding-top: 30px;
 }
 
 body .ask-player button {

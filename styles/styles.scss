@@ -69,13 +69,13 @@ body {
       font-size: 20px;
       border-radius: 50px;
       border-style: none;
-      background-color: rgb(22, 77, 31);
+      background-color: rgb(132, 177, 121);
       color: white;
       width: 15vh;
       height: 8vh;
 
       &:nth-child(even) {
-        background-color: rgb(175, 110, 35);
+        background-color: rgb(164, 196, 245);
       }
 
       &:hover {
@@ -103,11 +103,41 @@ body {
     }
   }
 
-  .current-player {
-    text-align: center;
-    font-family: 'Finger Paint', cursive;
+  .player-one {
+    position: absolute;
+    width: 180px;
+    height: 230px;
+    left: 10vh;
+    top: 30vh;
+    backdrop-filter: url(filters.svg#filter) blur(4px) brightness(80%);
+    animation: fade 2s;
+    border-radius: 45px;
+    box-shadow: 0 0px 20px 0 black;
   }
 
+  .player-two {
+    position: absolute;
+    width: 180px;
+    height: 230px;
+    right: 10vh;
+    backdrop-filter: url(filters.svg#filter) blur(4px) brightness(60%);
+    animation: fade 2s;
+    border-radius: 45px;
+    top: 30vh;
+    box-shadow: 0 0px 20px 0 black;
+  }
+
+  .current-player, .current-player-two, .player-two-name, .player-one-name {
+    text-align: center;
+    font-family: 'Finger Paint', cursive;
+    color: white;
+    font-size: 15px;
+  }
+
+  .player-one-img, .player-two-img{
+    padding-left: 50px;
+  }
+  
   .container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -122,9 +152,30 @@ body {
     backdrop-filter: url(filters.svg#filter) blur(4px) brightness(60%);
 
     .tile {
+      box-shadow: 0 0px 20px 0 black;
       margin: 6px;
       border-radius: 20px;
       background-color: rgba(255, 255, 255, 0.438);
+    }
+  }
+  .mute {
+    position: absolute;
+    right: 15vh;
+    bottom: 5vh;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .unmute {
+    position: absolute;
+    right: 15vh;
+    bottom: 5vh;
+    display: none;
+
+    &:hover {
+      cursor: pointer;
     }
   }
 }

@@ -7,7 +7,8 @@
   <title>Tic Tac Toe Game</title>
   <link rel="stylesheet" href="/styles/styles.css">
   <link rel="icon" href="https://img.icons8.com/external-others-nixx-design/67/000000/external-game-game-blue-others-nixx-design-2.png" type="image/png">
-  <script src="index.js" defer></script>
+  <script src="/scripts/index.js" defer></script>
+  <script src="/scripts/mute-bg.js" defer></script>
 </head>
 <body>
   <div class="logo">
@@ -17,9 +18,22 @@
     <h3>Welcome!<br>Choose who's going to play first:</h3>
     <br>
     <button id="x-button">Player X</button>
-    <button id="y-button">Player O</button>
+    <button id="o-button">Player O</button>
   </div>
-  <h2 id="current-player" class="current-player"></h2>
+  <img class="mute" id="mute" src="https://img.icons8.com/stickers/50/ffffff/mute.png"/>
+  <img class="unmute" id="unmute" src="https://img.icons8.com/stickers/50/000000/high-volume.png"/>
+  <div class="player-one" id="player-one">
+    <h6 id="current-player" class="current-player">Player X
+    </h6>
+      <p id="player-one-name" class="player-one-name" spellcheck="false">nickname</p>
+      <img class="player-one-img" src="https://img.icons8.com/bubbles/80/000000/seagull.png"/>
+  </div>
+  <div class="player-two"  id="player-two">
+    <h6 id="current-player-two" class="current-player">Player O
+    </h6>
+      <p id="player-two-name" class="player-two-name" spellcheck="false">nickname</p>
+      <img class="player-two-img" src="https://img.icons8.com/bubbles/80/000000/pixel-cat.png"/>
+  </div>
   <div class="container" id="tile-container">
     <div class="tile" id="tile-one"></div>
     <div class="tile" id="tile-two"></div>
@@ -30,6 +44,12 @@
     <div class="tile" id="tile-seven"></div>
     <div class="tile" id="tile-eight"></div>
     <div class="tile" id="tile-nine"></div>
+  </div>
+  <div class="audio">
+    <audio autoplay loop id="bg-music">
+      <source src="bg.mp3">
+      Your browser does not support the audio element.
+    </audio>
   </div>
 </body>
 </html>

@@ -121,14 +121,14 @@ body .ask-player button {
   font-size: 20px;
   border-radius: 50px;
   border-style: none;
-  background-color: #164d1f;
+  background-color: #84b179;
   color: white;
   width: 15vh;
   height: 8vh;
 }
 
 body .ask-player button:nth-child(even) {
-  background-color: #af6e23;
+  background-color: #a4c4f5;
 }
 
 body .ask-player button:hover {
@@ -155,9 +155,45 @@ body .logo .logo-text {
   color: #17522D;
 }
 
-body .current-player {
+body .player-one {
+  position: absolute;
+  width: 180px;
+  height: 230px;
+  left: 10vh;
+  top: 30vh;
+  -webkit-backdrop-filter: url(filters.svg#filter) blur(4px) brightness(80%);
+          backdrop-filter: url(filters.svg#filter) blur(4px) brightness(80%);
+  -webkit-animation: fade 2s;
+          animation: fade 2s;
+  border-radius: 45px;
+  -webkit-box-shadow: 0 0px 20px 0 black;
+          box-shadow: 0 0px 20px 0 black;
+}
+
+body .player-two {
+  position: absolute;
+  width: 180px;
+  height: 230px;
+  right: 10vh;
+  -webkit-backdrop-filter: url(filters.svg#filter) blur(4px) brightness(60%);
+          backdrop-filter: url(filters.svg#filter) blur(4px) brightness(60%);
+  -webkit-animation: fade 2s;
+          animation: fade 2s;
+  border-radius: 45px;
+  top: 30vh;
+  -webkit-box-shadow: 0 0px 20px 0 black;
+          box-shadow: 0 0px 20px 0 black;
+}
+
+body .current-player, body .current-player-two, body .player-two-name, body .player-one-name {
   text-align: center;
   font-family: 'Finger Paint', cursive;
+  color: white;
+  font-size: 15px;
+}
+
+body .player-one-img, body .player-two-img {
+  padding-left: 50px;
 }
 
 body .container {
@@ -180,8 +216,31 @@ body .container {
 }
 
 body .container .tile {
+  -webkit-box-shadow: 0 0px 20px 0 black;
+          box-shadow: 0 0px 20px 0 black;
   margin: 6px;
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.438);
+}
+
+body .mute {
+  position: absolute;
+  right: 15vh;
+  bottom: 5vh;
+}
+
+body .mute:hover {
+  cursor: pointer;
+}
+
+body .unmute {
+  position: absolute;
+  right: 15vh;
+  bottom: 5vh;
+  display: none;
+}
+
+body .unmute:hover {
+  cursor: pointer;
 }
 /*# sourceMappingURL=styles.css.map */

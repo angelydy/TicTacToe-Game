@@ -1,0 +1,66 @@
+.ask-player, .ask-reset, .show-winner {
+  position: absolute;
+  text-align: center;
+  background-color: white;
+  width: 50vh;
+  height: 30vh;
+  border-radius: 50px;
+  margin:17vh 61vh;
+  animation: bounce 2s ease;
+  animation-delay: 2s;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.479);
+  display: block;
+  z-index: 15;
+
+  h3 {
+    font-family: 'Finger Paint', cursive;
+    color: black;
+    padding-top: 30px;
+  }
+
+  button {
+    margin: 0 10px;
+    font-family: 'Poppins', serif;
+    font-weight: 500;
+    font-size: 20px;
+    border-radius: 50px;
+    border-style: none;
+    background-color: rgb(132, 177, 121);
+    color: white;
+    width: 15vh;
+    height: 8vh;
+
+    &:nth-child(even) {
+      background-color: rgb(164, 196, 245);
+    }
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+      border: dashed 2px black;
+    }
+  }
+}
+
+.ask-reset {
+  display: none;
+  margin: -61vh 61vh;
+
+  button {
+    margin: 0px 20px;
+  }
+}
+
+.show-winner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 50vh;
+  margin: -73vh 61vh;
+  display: none;
+
+  h3 {
+    font-size: 40px;
+  }
+}

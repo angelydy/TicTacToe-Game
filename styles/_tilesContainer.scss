@@ -1,0 +1,28 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  width: 60vh;
+  height: 60vh;
+  margin: 15vh 55vh;
+  border-radius: 20px;
+  padding: 10px;
+  border: 2px solid white;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.692);
+  backdrop-filter: url(filters.svg#filter) blur(4px) brightness(60%);
+
+  .tile {
+    box-shadow: 0 0px 20px 0 black;
+    margin: 6px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.438);
+    font-family: 'Finger Paint', cursive;
+    font-size: 100px;
+    text-align: center;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #89b19856;
+    }
+  }
+}

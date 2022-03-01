@@ -1,0 +1,34 @@
+.player-one {
+  position: absolute;
+  width: 180px;
+  height: 230px;
+  left: 10vh;
+  top: 30vh;
+  backdrop-filter: url(filters.svg#filter) blur(4px) brightness(80%);
+  animation: fade 2s;
+  border-radius: 45px;
+  box-shadow: 0 0px 20px 0 black;
+}
+
+.player-two {
+  position: absolute;
+  width: 180px;
+  height: 230px;
+  right: 10vh;
+  backdrop-filter: url(filters.svg#filter) blur(4px) brightness(60%);
+  animation: fade 2s;
+  border-radius: 45px;
+  top: 30vh;
+  box-shadow: 0 0px 20px 0 black;
+}
+
+.current-player, .current-player-two, .player-two-name, .player-one-name {
+  text-align: center;
+  font-family: 'Finger Paint', cursive;
+  color: white;
+  font-size: 15px;
+}
+
+.player-one-img, .player-two-img{
+  padding-left: 50px;
+}

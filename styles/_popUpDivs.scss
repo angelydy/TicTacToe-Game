@@ -59,8 +59,20 @@
   height: 50vh;
   margin: -73vh 61vh;
   display: none;
+  animation: zoomIn 1.5s ease-in-out;
+  position: relative;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.692);
 
-  h3 {
+  img {
+    position: absolute;
+    top: -70px;
+    animation: bounce 2s infinite;
+  }
+
+  p {
     font-size: 40px;
+    font-family: 'Finger Paint', cursive;
+    color: black;
+    padding-top: 0px;
   }
 }

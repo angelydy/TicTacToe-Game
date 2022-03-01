@@ -23,9 +23,6 @@ const xBtn = document.getElementById('x-button')
 const oBtn  = document.getElementById('o-button')
 
 function chooseFirstPlayer() {
-  if (askContainer.style.display === 'block') {
-    activeGame = false
-  }
   function displayPlayerOne() {
     askContainer.style.display = "none"
     tileContainer.style.animation = 'fromTop 2s ease'
@@ -59,6 +56,45 @@ tiles.forEach((tile, index) => {
   tile.addEventListener('click', () => playerAction(tile,index))
 })
 
+//check if tile have content or not
+const checkAction = (tile) => {
+  if (tile.textContent === 'X' || tile.textContent === 'O') {
+    return false;
+  }
+  return true
+}
+
+//game in action 
+const playerAction = (tile, index) => {
+  if (checkAction(tile) && activeGame) {
+    tile.textContent = currentPlayer
+    viewBoard(index)
+    checkWin()
+    changePlayer()
+  }
+}
+
+//updates the board
+const viewBoard = (index) => {
+  board[index] = currentPlayer
+}
+
+//change current player
+const changePlayer = () => {
+  if (currentPlayer === 'X') {
+    currentPlayer = 'O'
+    playerTwoContainer.style.border = '2px solid white'
+    playerTwo.textContent = `Player O is Playing`
+    playerOne.textContent = `Player X`
+    playerOneContainer.style.border = 'none'
+  } else {
+    currentPlayer = 'X'
+    playerOneContainer.style.border = '2px solid white'
+    playerOne.textContent = `Player X is Playing`
+    playerTwo.textContent = `Player O`
+    playerTwoContainer.style.border = 'none'
+  }
+}
 
 //for checking the winner
 const winningConditions = [
@@ -98,8 +134,14 @@ function checkWin() {
   showWinner(Tie)
 }
 
+//show winner
 const showWinner = (player) => {
+  const playAgainBtn = document.getElementById('playAgainBtn')
+  const historyBtn = document.getElementById('historyBtn')
+  playerOneContainer.style.border = 'none'
+  playerTwoContainer.style.border = 'none'
   winnerContainer.style.display = 'flex'
+
   switch (player) {
     case PlayerOWon:
       winnerText.textContent = `Player O Won`
@@ -110,46 +152,26 @@ const showWinner = (player) => {
     case Tie:
       winnerText.textContent = `TIE!`
   }
-}
 
-//check if tile have content or not
-const checkAction = (tile) => {
-  if (tile.textContent === 'X' || tile.textContent === 'O') {
-    return false;
-  }
-  return true
-}
-
-//updates the board
-const viewBoard = (index) => {
-  board[index] = currentPlayer
-}
-
-//change current player
-const changePlayer = () => {
-  if (currentPlayer === 'X') {
-    playerTwoContainer.style.border = '2px solid white'
-    playerTwo.textContent = `Player O is Playing`
-    playerOne.textContent = `Player X`
+  const newGame = () => {
+    winnerContainer.style.display = 'none'
     playerOneContainer.style.border = 'none'
-    currentPlayer = 'O'
-  } else {
-    playerOneContainer.style.border = '2px solid white'
-    playerOne.textContent = `Player X is Playing`
-    playerTwo.textContent = `Player O`
     playerTwoContainer.style.border = 'none'
-    currentPlayer = 'X'
-  }
-}
+    playerOne.textContent = `Player X`
+    playerTwo.textContent = `Player O`
+    playerOneName.textContent = 'nickname';
+    playerTwoName.textContent = 'nickname';
+    board = ['','','','','','','','','']
+    activeGame = true
+    askContainer.style.display = 'block'
+    askContainer.style.animation = '1s fromTop'
+    chooseFirstPlayer()
 
-//game in action 
-const playerAction = (tile, index) => {
-  if (checkAction(tile) && activeGame) {
-    tile.textContent = currentPlayer
-    viewBoard(index)
-    checkWin()
-    changePlayer()
+    tiles.forEach(tile => {
+      tile.textContent = ''
+    })
   }
+  playAgainBtn.addEventListener('click', newGame)
 }
 
 //reset game
@@ -157,6 +179,7 @@ const resetBtn = document.getElementById('resetBtn')
 const askReset = document.getElementById('ask-reset')
 const yesBtn = document.getElementById('yes-button')
 const noBtn = document.getElementById('no-button')
+
 function reset() {
   askReset.style.display = 'block'
 

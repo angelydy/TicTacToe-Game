@@ -16,27 +16,31 @@ const askContainer = document.getElementById('ask-player')
 const tileContainer = document.getElementById('tile-container')
 const xBtn = document.getElementById('x-button')
 const oBtn  = document.getElementById('o-button')
-function displayPlayerOne() {
-  askContainer.style.display = "none"
-  tileContainer.style.animation = 'fromTop 2s ease'
-  playerOne.textContent = `Player X is Playing`
-  currentPlayer = 'X'
-  playerOneName.contentEditable = true;
-  playerTwoName.contentEditable = true;
-  playerOneContainer.style.border = '2px solid white'
-}
 
-function displayPlayerTwo() {
-  askContainer.style.display = "none"
-  tileContainer.style.animation = 'fromTop 2s ease'
-  playerTwo.textContent = `Player O  is Playing`
-  currentPlayer = 'O'
-  playerOneName.contentEditable = true;
-  playerTwoName.contentEditable = true;
-  playerTwoContainer.style.border = '2px solid white'
+function chooseFirstPlayer() {
+  function displayPlayerOne() {
+    askContainer.style.display = "none"
+    tileContainer.style.animation = 'fromTop 2s ease'
+    playerOne.textContent = `Player X is Playing`
+    currentPlayer = 'X'
+    playerOneName.contentEditable = true;
+    playerTwoName.contentEditable = true;
+    playerOneContainer.style.border = '2px solid white'
+  }
+  xBtn.addEventListener('click', displayPlayerOne)
+  
+  function displayPlayerTwo() {
+    askContainer.style.display = "none"
+    tileContainer.style.animation = 'fromTop 2s ease'
+    playerTwo.textContent = `Player O  is Playing`
+    currentPlayer = 'O'
+    playerOneName.contentEditable = true;
+    playerTwoName.contentEditable = true;
+    playerTwoContainer.style.border = '2px solid white'
+  }
+  oBtn.addEventListener('click', displayPlayerTwo)
 }
-xBtn.addEventListener('click', displayPlayerOne)
-oBtn.addEventListener('click', displayPlayerTwo)
+chooseFirstPlayer()
 
 //loop for the tile and clicking the tiles
 tiles.forEach((tile, index) => {
@@ -60,9 +64,14 @@ const playerAction = (tile, index) => {
   }
 }
 
+const viewBoard = (index) => {
+  board[index] = currentPlayer
+}
+
 
 //change current player
 const changePlayer = () => {
+  currentPlayer = currentPlayer === 'X' ? 'O' : 'X'
   if (currentPlayer === 'X') {
     playerOneContainer.style.border = '2px solid white'
     playerOne.textContent = `Player X is Playing`
@@ -71,4 +80,19 @@ const changePlayer = () => {
     playerTwo.textContent = `Player O is Playing`
   }
 }
+
+//reset game
+const resetBtn = document.getElementById('resetBtn')
+function reset() {
+  board = ['','','','','','','','','']
+  activeGame = true
+  askContainer.style.display = 'block'
+  askContainer.style.animation = '1s bounce'
+  chooseFirstPlayer()
+
+  tiles.forEach(tile => {
+    tile.textContent = ''
+  })
+}
+resetBtn.addEventListener('click', reset)
 

@@ -105,7 +105,7 @@ body .ask-player {
   -webkit-box-shadow: 0 0 50px rgba(0, 0, 0, 0.479);
           box-shadow: 0 0 50px rgba(0, 0, 0, 0.479);
   display: block;
-  z-index: 1;
+  z-index: 15;
 }
 
 body .ask-player h3 {
@@ -135,7 +135,7 @@ body .ask-player button:hover {
   cursor: pointer;
 }
 
-body .logo {
+body .game-info {
   position: fixed;
   bottom: 0px;
   left: 50px;
@@ -148,7 +148,11 @@ body .logo {
           animation: fade 2s ease;
 }
 
-body .logo .logo-text {
+body .game-info:hover {
+  cursor: pointer;
+}
+
+body .game-info .info-text {
   font-family: 'Finger Paint', cursive;
   text-align: center;
   font-size: 18px;
@@ -221,6 +225,14 @@ body .container .tile {
   margin: 6px;
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.438);
+  font-family: 'Finger Paint', cursive;
+  font-size: 100px;
+  text-align: center;
+}
+
+body .container .tile:hover {
+  cursor: pointer;
+  background-color: #52836471;
 }
 
 body .mute {
@@ -242,5 +254,33 @@ body .unmute {
 
 body .unmute:hover {
   cursor: pointer;
+}
+
+body .reset {
+  text-align: center;
+  position: absolute;
+  left: 80vh;
+  bottom: 5vh;
+}
+
+body .reset button {
+  background: #89addd;
+  background: -webkit-gradient(linear, left top, right top, color-stop(24%, rgba(112, 142, 180, 0.85)), color-stop(63%, #8bac93));
+  background: linear-gradient(90deg, rgba(112, 142, 180, 0.85) 24%, #8bac93 63%);
+  color: white;
+  border-radius: 30px;
+  border-style: none;
+  font-family: 'Finger Paint', cursive;
+  width: 100px;
+  height: 50px;
+  font-size: 15px;
+  border: 2px solid white;
+}
+
+body .reset button:hover {
+  cursor: pointer;
+  background: #a2c9ac;
+  background: -webkit-gradient(linear, left top, right top, color-stop(24%, #89ac92), color-stop(63%, #7696be));
+  background: linear-gradient(90deg, #89ac92 24%, #7696be 63%);
 }
 /*# sourceMappingURL=styles.css.map */

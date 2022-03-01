@@ -9,7 +9,7 @@ body {
   margin: 0;
   padding: 0;
 
-  .ask-player {
+  .ask-player, .ask-reset {
     position: absolute;
     text-align: center;
     background-color: white;
@@ -49,6 +49,11 @@ body {
         cursor: pointer;
       }
     }
+  }
+
+  .ask-reset {
+    display: none;
+    margin: -61vh 61vh;
   }
 
   .game-info {

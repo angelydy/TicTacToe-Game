@@ -90,7 +90,7 @@ body {
   padding: 0;
 }
 
-body .ask-player {
+body .ask-player, body .ask-reset {
   position: absolute;
   text-align: center;
   background-color: white;
@@ -108,13 +108,13 @@ body .ask-player {
   z-index: 15;
 }
 
-body .ask-player h3 {
+body .ask-player h3, body .ask-reset h3 {
   font-family: 'Finger Paint', cursive;
   color: black;
   padding-top: 30px;
 }
 
-body .ask-player button {
+body .ask-player button, body .ask-reset button {
   margin: 0 10px;
   font-family: 'Poppins', serif;
   font-weight: 500;
@@ -127,12 +127,17 @@ body .ask-player button {
   height: 8vh;
 }
 
-body .ask-player button:nth-child(even) {
+body .ask-player button:nth-child(even), body .ask-reset button:nth-child(even) {
   background-color: #a4c4f5;
 }
 
-body .ask-player button:hover {
+body .ask-player button:hover, body .ask-reset button:hover {
   cursor: pointer;
+}
+
+body .ask-reset {
+  display: none;
+  margin: -61vh 61vh;
 }
 
 body .game-info {

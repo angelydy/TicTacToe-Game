@@ -1,4 +1,4 @@
 # Tic Tac Toe Game
-[View Live Version Here](https://tic-tac-toe-game-angely.vercel.app)
+[Play the game by clicking here](https://tic-tac-toe-game-angely.vercel.app)
 
 ![SamplePhoto](01.png)

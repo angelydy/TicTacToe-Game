@@ -8,6 +8,7 @@ const playerOneName = document.getElementById('player-one-name')
 const playerTwoName = document.getElementById('player-two-name')
 const winnerContainer = document.getElementById('show-winner')
 const winnerText = document.getElementById('winner-text')
+const resetBtn = document.getElementById('resetBtn')
 
 let currentPlayer = 'X'
 let board = ['','','','','','','','','']
@@ -24,8 +25,8 @@ const oBtn  = document.getElementById('o-button')
 
 function chooseFirstPlayer() {
   function displayPlayerOne() {
-    activeGame = true
     resetBtn.style.display = 'block'
+    activeGame = true
     askContainer.style.display = "none"
     tileContainer.style.animation = 'fromTop 2s ease'
     playerOne.textContent = `Player X is Playing`
@@ -43,8 +44,6 @@ function chooseFirstPlayer() {
     resetBtn.style.display = 'block'
     askContainer.style.display = "none"
     tileContainer.style.animation = 'fromTop 2s ease'
-    playerOne.textContent = `Player X`
-    playerTwo.textContent = `Player O  is Playing`
     currentPlayer = 'O'
     playerOneName.contentEditable = true;
     playerTwoName.contentEditable = true;
@@ -165,7 +164,6 @@ const showWinner = (player) => {
 }
 
 //reset game
-const resetBtn = document.getElementById('resetBtn')
 const askReset = document.getElementById('ask-reset')
 const yesBtn = document.getElementById('yes-button')
 const noBtn = document.getElementById('no-button')

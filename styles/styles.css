@@ -155,6 +155,10 @@ div {
   border: dashed 2px black;
 }
 
+.resetBtn {
+  display: none;
+}
+
 .ask-reset {
   display: none;
   margin: -61vh 61vh;

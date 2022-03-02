@@ -7,6 +7,8 @@
 @import 'tilesContainer';
 @import 'muteBtn';
 @import 'resetBtn';
+@import 'historyBtns';
+@import 'mediaQueries';
 
 body {
   background-image: url(https://wallpaperbat.com/img/340120-forest-cartoon-wallpaper-top-free-forest-cartoon-background.jpg);
@@ -15,44 +17,4 @@ body {
   background-attachment: fixed;
   margin: 0;
   padding: 0;
-}
-
-@media screen and (min-width: 320px) and (max-width: 900px) {
-  body {
-    max-width: 100%;
-    position: relative;
-    overflow: auto;
-    box-sizing: border-box;
-
-    .player-one {
-      position: absolute;
-      top: 0;
-      left: 40vh;
-    }
-
-    .player-two {
-      position: relative;
-      top: 120vh;
-      left: 40vh;
-    }
-
-    .ask-player, .ask-reset, .show-winner {
-      position: absolute;
-      top: 45vh;
-      left: -35vh;
-    }
-
-    .container {
-      position: relative;
-      top: 0;
-      left: -35vh;
-    }
-
-    .mute, .unmute {
-      position: absolute;
-      top: 0;
-      left: 10px;
-    }
-
-  }
 }

@@ -1,0 +1,31 @@
+.history {
+  position: absolute;
+  top: 80vh;
+  left: 41vh;
+  display: none;
+  animation: zoomIn 1s;
+
+  button {
+    margin: 0 15vh;
+    font-family: 'Luckiest Guy', serif;
+    font-weight: 500;
+    font-size: 20px;
+    border-radius: 50px;
+    border-style: none;
+    background-color: #ffba02;
+    color: white;
+    width: 15vh;
+    height: 8vh;
+    filter: drop-shadow(0 2px 2px hsla(290, 100%, 20%, 1));
+
+    &:nth-child(even) {
+      background-color: #fb5300;
+    }
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+      border: dashed 2px black;
+    }
+  }
+}

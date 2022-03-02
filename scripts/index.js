@@ -9,6 +9,8 @@ const playerTwoName = document.getElementById('player-two-name')
 const winnerContainer = document.getElementById('show-winner')
 const winnerText = document.getElementById('winner-text')
 const resetBtn = document.getElementById('resetBtn')
+const playAgainBtn = document.getElementById('playAgainBtn')
+const historyBtn = document.getElementById('historyBtn')
 
 let currentPlayer = 'X'
 let board = ['','','','','','','','','']
@@ -71,16 +73,12 @@ const checkAction = (tile) => {
 const playerAction = (tile, index) => {
   if (checkAction(tile) && activeGame) {
     tile.textContent = currentPlayer
-    viewBoard(index)
+    board[index] = currentPlayer
     checkWin()
     changePlayer()
   }
 }
 
-//updates the board
-const viewBoard = (index) => {
-  board[index] = currentPlayer
-}
 
 //change current player
 const changePlayer = () => {
@@ -137,14 +135,16 @@ function checkWin() {
   showWinner(Tie)
 }
 
-//show winner
+//show winner container
 const showWinner = (player) => {
+  const history = document.getElementById('history')
+  const prev = document.getElementById('prev')
+  const next = document.getElementById('next')
   resetBtn.style.display = 'none'
-  const playAgainBtn = document.getElementById('playAgainBtn')
-  const historyBtn = document.getElementById('historyBtn')
   playerOneContainer.style.border = 'none'
   playerTwoContainer.style.border = 'none'
   winnerContainer.style.display = 'flex'
+  prev.style.display = 'none'
 
   switch (player) {
     case PlayerOWon:
@@ -157,10 +157,56 @@ const showWinner = (player) => {
       winnerText.textContent = `TIE!`
   }
 
+
+  //let the user play again
   const newGame = () => {
-    location.reload()
+    winnerContainer.style.display = 'none'
+    board = ['','','','','','','','','']
+    playerOneContainer.style.border = 'none'
+    playerTwoContainer.style.border = 'none'
+    playerOne.textContent = `Player X`
+    playerTwo.textContent = `Player O`
+    playerOneName.textContent = 'nickname';
+    playerTwoName.textContent = 'nickname';
+    askContainer.style.display = 'block'
+    askContainer.style.animation = '1s fromTop'
+    tiles.forEach(tile => {
+      tile.textContent = ''
+    })
+    chooseFirstPlayer()
   }
   playAgainBtn.addEventListener('click', newGame)
+
+
+  //show game's history
+  function gameHistory() {
+    winnerContainer.style.display = 'none'
+    history.style.display = 'block'
+    let historyArray = board
+    tiles.forEach(tile => {
+      tile.textContent = ''
+    })
+
+    function previous() {
+      historyArray.pop()
+      for (var a = 0; historyArray.length; a++) {
+        tiles[a].textContent = historyArray[a]
+      }
+    }
+    prev.addEventListener('click', previous)
+
+    function nextMove() {
+      prev.style.display = 'inline-block'
+      var b = historyArray.pop()
+      historyArray.push(b)
+      console.log(historyArray)
+      for (var a = 0; historyArray.length; a++) {
+        tiles[a].textContent = historyArray[a]
+      }
+    }
+    next.addEventListener('click', nextMove)
+  }
+  historyBtn.addEventListener('click', gameHistory)
 }
 
 //reset game
@@ -169,10 +215,12 @@ const yesBtn = document.getElementById('yes-button')
 const noBtn = document.getElementById('no-button')
 
 function reset() {
+  activeGame = false
   askReset.style.display = 'block'
 
   const cancel = () => {
     askReset.style.display = 'none'
+    activeGame = true
   }
   noBtn.addEventListener('click', cancel)
 
@@ -185,7 +233,6 @@ function reset() {
     playerOneName.textContent = 'nickname';
     playerTwoName.textContent = 'nickname';
     board = ['','','','','','','','','']
-    activeGame = true
     askContainer.style.display = 'block'
     askContainer.style.animation = '1s fromTop'
     chooseFirstPlayer()
@@ -197,4 +244,5 @@ function reset() {
   yesBtn.addEventListener('click', resetGame)
 }
 resetBtn.addEventListener('click', reset)
+
 

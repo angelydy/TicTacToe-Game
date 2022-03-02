@@ -376,13 +376,39 @@ div {
   border: 2px dashed white;
 }
 
-body {
-  background-image: url(https://wallpaperbat.com/img/340120-forest-cartoon-wallpaper-top-free-forest-cartoon-background.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  margin: 0;
-  padding: 0;
+.history {
+  position: absolute;
+  top: 80vh;
+  left: 41vh;
+  display: none;
+  -webkit-animation: zoomIn 1s;
+          animation: zoomIn 1s;
+}
+
+.history button {
+  margin: 0 15vh;
+  font-family: 'Luckiest Guy', serif;
+  font-weight: 500;
+  font-size: 20px;
+  border-radius: 50px;
+  border-style: none;
+  background-color: #ffba02;
+  color: white;
+  width: 15vh;
+  height: 8vh;
+  -webkit-filter: drop-shadow(0 2px 2px #550066);
+          filter: drop-shadow(0 2px 2px #550066);
+}
+
+.history button:nth-child(even) {
+  background-color: #fb5300;
+}
+
+.history button:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  border: dashed 2px black;
 }
 
 @media screen and (min-width: 320px) and (max-width: 900px) {
@@ -418,5 +444,14 @@ body {
     top: 0;
     left: 10px;
   }
+}
+
+body {
+  background-image: url(https://wallpaperbat.com/img/340120-forest-cartoon-wallpaper-top-free-forest-cartoon-background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
 }
 /*# sourceMappingURL=styles.css.map */

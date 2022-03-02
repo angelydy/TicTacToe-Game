@@ -384,4 +384,39 @@ body {
   margin: 0;
   padding: 0;
 }
+
+@media screen and (min-width: 320px) and (max-width: 900px) {
+  body {
+    max-width: 100%;
+    position: relative;
+    overflow: auto;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  body .player-one {
+    position: absolute;
+    top: 0;
+    left: 40vh;
+  }
+  body .player-two {
+    position: relative;
+    top: 120vh;
+    left: 40vh;
+  }
+  body .ask-player, body .ask-reset, body .show-winner {
+    position: absolute;
+    top: 45vh;
+    left: -35vh;
+  }
+  body .container {
+    position: relative;
+    top: 0;
+    left: -35vh;
+  }
+  body .mute, body .unmute {
+    position: absolute;
+    top: 0;
+    left: 10px;
+  }
+}
 /*# sourceMappingURL=styles.css.map */

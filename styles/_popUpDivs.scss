@@ -1,11 +1,11 @@
 .ask-player, .ask-reset, .show-winner {
   position: absolute;
   text-align: center;
-  background-color: white;
+  background: url(/02.png);
   width: 50vh;
   height: 30vh;
   border-radius: 50px;
-  margin:17vh 61vh;
+  margin:20vh 61vh;
   animation: bounce 2s ease;
   animation-delay: 2s;
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.479);
@@ -20,18 +20,19 @@
 
   button {
     margin: 0 10px;
-    font-family: 'Poppins', serif;
+    font-family: 'Luckiest Guy', serif;
     font-weight: 500;
     font-size: 20px;
     border-radius: 50px;
     border-style: none;
-    background-color: rgb(132, 177, 121);
+    background-color: #ffba02;
     color: white;
     width: 15vh;
     height: 8vh;
+    filter: drop-shadow(0 2px 2px hsla(290, 100%, 20%, 1));
 
     &:nth-child(even) {
-      background-color: rgb(164, 196, 245);
+      background-color: #fb5300;
     }
 
     &:hover {
@@ -39,6 +40,13 @@
       transform: scale(1.1);
       border: dashed 2px black;
     }
+  }
+
+  .welcome-text {
+    width: 80vh;
+    position: absolute;
+    right: -15vh;
+    bottom: 10vh
   }
 }
 

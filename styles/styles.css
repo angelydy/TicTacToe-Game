@@ -115,7 +115,7 @@ div {
   width: 50vh;
   height: 30vh;
   border-radius: 50px;
-  margin: 20vh 61vh;
+  margin: 22vh 61vh;
   -webkit-animation: bounce 2s ease;
           animation: bounce 2s ease;
   -webkit-animation-delay: 2s;
@@ -159,9 +159,9 @@ div {
 }
 
 .ask-player .welcome-text, .ask-reset .welcome-text, .show-winner .welcome-text {
-  width: 80vh;
+  width: 90vh;
   position: absolute;
-  right: -15vh;
+  right: -20vh;
   bottom: 10vh;
 }
 

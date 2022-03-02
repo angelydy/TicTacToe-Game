@@ -41,7 +41,6 @@
     }
   }
 }
-
 .ask-reset {
   display: none;
   margin: -61vh 61vh;
@@ -74,5 +73,9 @@
     font-family: 'Finger Paint', cursive;
     color: black;
     padding-top: 0px;
+  }
+
+  button {
+    width: 20vh;
   }
 }

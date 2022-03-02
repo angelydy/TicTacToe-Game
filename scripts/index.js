@@ -11,7 +11,7 @@ const winnerText = document.getElementById('winner-text')
 
 let currentPlayer = 'X'
 let board = ['','','','','','','','','']
-let activeGame = true
+let activeGame = false
 const PlayerOWon = 'Player O Won'
 const PlayerXWon = 'Player X Won'
 const Tie = 'TIE'
@@ -24,6 +24,8 @@ const oBtn  = document.getElementById('o-button')
 
 function chooseFirstPlayer() {
   function displayPlayerOne() {
+    activeGame = true
+    resetBtn.style.display = 'block'
     askContainer.style.display = "none"
     tileContainer.style.animation = 'fromTop 2s ease'
     playerOne.textContent = `Player X is Playing`
@@ -37,6 +39,8 @@ function chooseFirstPlayer() {
   xBtn.addEventListener('click', displayPlayerOne)
   
   function displayPlayerTwo() {
+    activeGame = true
+    resetBtn.style.display = 'block'
     askContainer.style.display = "none"
     tileContainer.style.animation = 'fromTop 2s ease'
     playerOne.textContent = `Player X`
@@ -136,6 +140,7 @@ function checkWin() {
 
 //show winner
 const showWinner = (player) => {
+  resetBtn.style.display = 'none'
   const playAgainBtn = document.getElementById('playAgainBtn')
   const historyBtn = document.getElementById('historyBtn')
   playerOneContainer.style.border = 'none'
@@ -154,22 +159,7 @@ const showWinner = (player) => {
   }
 
   const newGame = () => {
-    winnerContainer.style.display = 'none'
-    playerOneContainer.style.border = 'none'
-    playerTwoContainer.style.border = 'none'
-    playerOne.textContent = `Player X`
-    playerTwo.textContent = `Player O`
-    playerOneName.textContent = 'nickname';
-    playerTwoName.textContent = 'nickname';
-    board = ['','','','','','','','','']
-    activeGame = true
-    askContainer.style.display = 'block'
-    askContainer.style.animation = '1s fromTop'
-    chooseFirstPlayer()
-
-    tiles.forEach(tile => {
-      tile.textContent = ''
-    })
+    location.reload()
   }
   playAgainBtn.addEventListener('click', newGame)
 }

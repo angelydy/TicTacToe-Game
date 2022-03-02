@@ -202,6 +202,10 @@ div {
   padding-top: 0px;
 }
 
+.show-winner button {
+  width: 20vh;
+}
+
 .game-info {
   position: fixed;
   bottom: 0px;

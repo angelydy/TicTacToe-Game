@@ -174,10 +174,33 @@ const showWinner = (player) => {
       score_X.textContent = `Player X: ${scoreO}`
   }
 
+  //let the user play again
+const newGame = () => {
+  winnerContainer.style.display = 'none'
+  playerOneContainer.style.border = 'none'
+  playerTwoContainer.style.border = 'none'
+  playerOne.textContent = `Player X`
+  playerTwo.textContent = `Player O`
+  playerOneName.textContent = 'nickname';
+  playerTwoName.textContent = 'nickname';
+  askContainer.style.display = 'block'
+  askContainer.style.animation = '1s fromTop'
+  board = ['','','','','','','','','']
+  chooseFirstPlayer()
+
+  tiles.forEach(tile => {
+    tile.textContent = ''
+  })
+  score.style.display = 'block'
+}
+playAgainBtn.addEventListener('click', newGame)
+
   //show game's history
   function gameHistory() {
     activeGame = false
     winnerContainer.style.display = 'none'
+    prev.style.display = 'inline-block'
+    next.style.display = 'inline-block'
     history.style.display = 'block'
     resetBtn.style.display = 'block'
 
@@ -214,26 +237,6 @@ const showWinner = (player) => {
   historyBtn.addEventListener('click', gameHistory)
 }
 
-//let the user play again
-const newGame = () => {
-  winnerContainer.style.display = 'none'
-  playerOneContainer.style.border = 'none'
-  playerTwoContainer.style.border = 'none'
-  playerOne.textContent = `Player X`
-  playerTwo.textContent = `Player O`
-  playerOneName.textContent = 'nickname';
-  playerTwoName.textContent = 'nickname';
-  askContainer.style.display = 'block'
-  askContainer.style.animation = '1s fromTop'
-  board = ['','','','','','','','','']
-  chooseFirstPlayer()
-
-  tiles.forEach(tile => {
-    tile.textContent = ''
-  })
-  score.style.display = 'block'
-}
-playAgainBtn.addEventListener('click', newGame)
 
 //reset game
 const askReset = document.getElementById('ask-reset')
@@ -250,7 +253,7 @@ function reset() {
   }
   noBtn.addEventListener('click', cancel)
 
-  const resetGame = () => {
+  function resetGame() {
     prev.style.display = 'none'
     next.style.display = 'none'
     score.style.display = 'none'
@@ -267,6 +270,7 @@ function reset() {
     askContainer.style.display = 'block'
     askContainer.style.animation = '1s fromTop'
     chooseFirstPlayer()
+    resetBtn.style.display = 'none'
 
     tiles.forEach(tile => {
       tile.textContent = ''

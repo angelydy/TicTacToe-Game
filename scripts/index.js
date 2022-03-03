@@ -12,9 +12,13 @@ const resetBtn = document.getElementById('resetBtn')
 const playAgainBtn = document.getElementById('playAgainBtn')
 const historyBtn = document.getElementById('historyBtn')
 
+let scoreX = 0
+let scoreO = 0
+let count = 0
 let currentPlayer = 'X'
 let board = ['','','','','','','','','']
 let activeGame = false
+const score = document.getElementById('score')
 const PlayerOWon = 'Player O Won'
 const PlayerXWon = 'Player X Won'
 const Tie = 'TIE'
@@ -140,62 +144,59 @@ const showWinner = (player) => {
   const history = document.getElementById('history')
   const prev = document.getElementById('prev')
   const next = document.getElementById('next')
-  const score = document.getElementById('score')
+  const score_O = document.getElementById('score-O')
+  const score_X = document.getElementById('score-X')
   resetBtn.style.display = 'none'
   playerOneContainer.style.border = 'none'
   playerTwoContainer.style.border = 'none'
   winnerContainer.style.display = 'flex'
+  score.style.display = 'block'
   prev.style.display = 'none'
 
   switch (player) {
     case PlayerOWon:
+      scoreO++
       winnerText.textContent = `Player O Wins`
+      score_O.textContent = `Player O: ${scoreO}`
+      score_X.textContent = `Player X: ${scoreX}`
       break;
     case PlayerXWon:
+      scoreX++
       winnerText.textContent = `Player X Wins`
+      score_O.textContent = `Player O: ${scoreO}`
+      score_X.textContent = `Player X: ${scoreX}`
       break;
     case Tie:
       winnerText.textContent = `TIE!`
+      scoreO++
+      scoreX++
+      score_O.textContent = `Player O: ${scoreO}`
+      score_X.textContent = `Player X: ${scoreO}`
   }
-
-
-  //let the user play again
-  const newGame = () => {
-    winnerContainer.style.display = 'none'
-    board = ['','','','','','','','','']
-    playerOneContainer.style.border = 'none'
-    playerTwoContainer.style.border = 'none'
-    playerOne.textContent = `Player X`
-    playerTwo.textContent = `Player O`
-    playerOneName.textContent = 'nickname';
-    playerTwoName.textContent = 'nickname';
-    askContainer.style.display = 'block'
-    askContainer.style.animation = '1s fromTop'
-    tiles.forEach(tile => {
-      tile.textContent = ''
-    })
-    chooseFirstPlayer()
-    score.style.display = 'block'
-  }
-  playAgainBtn.addEventListener('click', newGame)
-
 
   //show game's history
   function gameHistory() {
     activeGame = false
     winnerContainer.style.display = 'none'
     history.style.display = 'block'
+    resetBtn.style.display = 'block'
+
     count = 0
     tiles.forEach(tile => {
       tile.textContent = ''
     })
 
     function previous() {
+      next.style.display = 'inline-block'
       if (count === 0) {
         count = board.length
       }
       count = count - 1
       tiles[count].textContent = ''
+
+      if (count === 0) {
+        prev.style.display = 'none'
+      }
     }
     prev.addEventListener('click', previous)
 
@@ -204,7 +205,7 @@ const showWinner = (player) => {
       count = count + 1
       tiles[count - 1].textContent = board[count - 1]
 
-      if (count > board.length) {
+      if (count === board.length) {
         next.style.display = 'none'
       }
     }
@@ -212,6 +213,27 @@ const showWinner = (player) => {
   }
   historyBtn.addEventListener('click', gameHistory)
 }
+
+//let the user play again
+const newGame = () => {
+  winnerContainer.style.display = 'none'
+  playerOneContainer.style.border = 'none'
+  playerTwoContainer.style.border = 'none'
+  playerOne.textContent = `Player X`
+  playerTwo.textContent = `Player O`
+  playerOneName.textContent = 'nickname';
+  playerTwoName.textContent = 'nickname';
+  askContainer.style.display = 'block'
+  askContainer.style.animation = '1s fromTop'
+  board = ['','','','','','','','','']
+  chooseFirstPlayer()
+
+  tiles.forEach(tile => {
+    tile.textContent = ''
+  })
+  score.style.display = 'block'
+}
+playAgainBtn.addEventListener('click', newGame)
 
 //reset game
 const askReset = document.getElementById('ask-reset')
@@ -229,6 +251,9 @@ function reset() {
   noBtn.addEventListener('click', cancel)
 
   const resetGame = () => {
+    prev.style.display = 'none'
+    next.style.display = 'none'
+    score.style.display = 'none'
     askReset.style.display = 'none'
     playerOneContainer.style.border = 'none'
     playerTwoContainer.style.border = 'none'
@@ -236,6 +261,8 @@ function reset() {
     playerTwo.textContent = `Player O`
     playerOneName.textContent = 'nickname';
     playerTwoName.textContent = 'nickname';
+    scoreX = 0
+    scoreO = 0
     board = ['','','','','','','','','']
     askContainer.style.display = 'block'
     askContainer.style.animation = '1s fromTop'

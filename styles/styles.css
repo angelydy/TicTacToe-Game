@@ -248,7 +248,7 @@ div {
   position: fixed;
   display: none;
   top: 0;
-  right: -50px;
+  right: 50px;
   background-color: rgba(255, 255, 255, 0.76);
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
@@ -257,7 +257,7 @@ div {
   font-size: 18px;
   color: #17522D;
   width: 25vh;
-  height: 80px;
+  height: 15vh;
   -webkit-animation: fade 2s ease;
           animation: fade 2s ease;
 }

@@ -140,6 +140,7 @@ const showWinner = (player) => {
   const history = document.getElementById('history')
   const prev = document.getElementById('prev')
   const next = document.getElementById('next')
+  const score = document.getElementById('score')
   resetBtn.style.display = 'none'
   playerOneContainer.style.border = 'none'
   playerTwoContainer.style.border = 'none'
@@ -148,10 +149,10 @@ const showWinner = (player) => {
 
   switch (player) {
     case PlayerOWon:
-      winnerText.textContent = `Player O Won`
+      winnerText.textContent = `Player O Wins`
       break;
     case PlayerXWon:
-      winnerText.textContent = `Player X Won`
+      winnerText.textContent = `Player X Wins`
       break;
     case Tie:
       winnerText.textContent = `TIE!`
@@ -174,34 +175,37 @@ const showWinner = (player) => {
       tile.textContent = ''
     })
     chooseFirstPlayer()
+    score.style.display = 'block'
   }
   playAgainBtn.addEventListener('click', newGame)
 
 
   //show game's history
   function gameHistory() {
+    activeGame = false
     winnerContainer.style.display = 'none'
     history.style.display = 'block'
-    let historyArray = board
+    count = 0
     tiles.forEach(tile => {
       tile.textContent = ''
     })
 
     function previous() {
-      historyArray.pop()
-      for (var a = 0; historyArray.length; a++) {
-        tiles[a].textContent = historyArray[a]
+      if (count === 0) {
+        count = board.length
       }
+      count = count - 1
+      tiles[count].textContent = ''
     }
     prev.addEventListener('click', previous)
 
     function nextMove() {
       prev.style.display = 'inline-block'
-      var b = historyArray.pop()
-      historyArray.push(b)
-      console.log(historyArray)
-      for (var a = 0; historyArray.length; a++) {
-        tiles[a].textContent = historyArray[a]
+      count = count + 1
+      tiles[count - 1].textContent = board[count - 1]
+
+      if (count > board.length) {
+        next.style.display = 'none'
       }
     }
     next.addEventListener('click', nextMove)

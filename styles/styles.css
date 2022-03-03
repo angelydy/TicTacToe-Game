@@ -116,8 +116,8 @@ div {
   height: 30vh;
   border-radius: 50px;
   margin: 22vh 61vh;
-  -webkit-animation: bounce 2s ease;
-          animation: bounce 2s ease;
+  -webkit-animation: bounce 2s ease infinite;
+          animation: bounce 2s ease infinite;
   -webkit-animation-delay: 2s;
           animation-delay: 2s;
   -webkit-box-shadow: 0 0 50px rgba(0, 0, 0, 0.479);
@@ -242,6 +242,28 @@ div {
   text-align: center;
   font-size: 18px;
   color: #17522D;
+}
+
+.score {
+  position: fixed;
+  display: none;
+  top: 0;
+  right: -50px;
+  background-color: rgba(255, 255, 255, 0.76);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  font-family: 'Finger Paint', cursive;
+  text-align: center;
+  font-size: 18px;
+  color: #17522D;
+  width: 25vh;
+  height: 80px;
+  -webkit-animation: fade 2s ease;
+          animation: fade 2s ease;
+}
+
+.score:hover {
+  cursor: pointer;
 }
 
 .player-one {

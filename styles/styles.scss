@@ -18,3 +18,20 @@ body {
   margin: 0;
   padding: 0;
 }
+
+.moveHistory {
+  display: none;
+  background-color: transparent;
+  font-family: 'Finger Paint', serif;
+  font-size: 15px;
+  position: absolute;
+  right: 5vh;
+  animation: fade 2s;
+  top: 62vh;
+  width: 30vh;
+  height: 230px;
+  color: black;
+  animation: bouce 1s;
+  overflow: auto;
+  box-sizing: border-box;
+}

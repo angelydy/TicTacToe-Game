@@ -19,7 +19,7 @@ body {
   padding: 0;
 }
 
-.moveHistory {
+.moveHistory{
   display: none;
   text-align: justify;
   background-color: transparent;
@@ -31,8 +31,43 @@ body {
   top: 62vh;
   width: 35vh;
   height: 25vh;
-  color: black;
+  color: white;
   animation: bouce 1s;
   overflow: auto;
   box-sizing: border-box;
+}
+
+.moveHistoryX {
+  display: none;
+  text-align: justify;
+  background-color: transparent;
+  font-family: 'Finger Paint', serif;
+  font-size: 15px;
+  position: absolute;
+  left: 5vh;
+  animation: fade 2s;
+  top: 62vh;
+  width: 35vh;
+  height: 25vh;
+  color: white;
+  animation: bouce 1s;
+  overflow: auto;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 45px;
+
+  &:hover {
+    background: #555; 
+  }
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
 }

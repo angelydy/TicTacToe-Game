@@ -72,15 +72,22 @@ const checkAction = (tile) => {
 
 //detailed move history
 let movesArray = []
-const movesLocation = ['top left', 'top middle', 'top right', 'middle left', 'middle', 'middle right', 'bottom left', 'bottom middle', 'bottom right']
+let movesArrayX = []
+const movesLocation = ['top left', 'top midd)le', 'top right', 'middle left', 'middle', 'middle right', 'bottom left', 'bottom middle', 'bottom right']
 const moveHistory = document.getElementById('moveHistory')
+const moveHistoryX = document.getElementById('moveHistoryX')
 function detailedHistory (index) {
+  if (currentPlayer === 'O') {
     movesArray.push(`Player ${currentPlayer} marked the ${movesLocation[index]} tile <br>`)
+    moveHistory.style.animation = 'fade 1.5s'
     moveHistory.style.display = 'block'
     moveHistory.innerHTML = movesArray
-  //for(var a = 0; a < board.length; a++) {
-    //movesArray.push(`Player ${currentPlayer} marked the ${movesLocation[a]} tile <br>`)
-  //}
+  } else {
+    movesArrayX.push(`Player ${currentPlayer} marked the ${movesLocation[index]} tile <br>`)
+    moveHistoryX.style.animation = 'fade 1.5s'
+    moveHistoryX.style.display = 'block'
+    moveHistoryX.innerHTML = movesArrayX
+  }
 }
 
 
@@ -270,7 +277,9 @@ const newGame = () => {
   askContainer.style.display = 'block'
   askContainer.style.animation = '1s fromTop'
   movesArray = []
+  movesArrayX = []
   moveHistory.innerHTML = ''
+  moveHistoryX.innerHTML = ''
   board = ['','','','','','','','','']
   historyBoard = [
     ['','',''],
@@ -348,7 +357,9 @@ function reset() {
   function resetGame() {
     count = 0
     movesArray = []
+    movesArrayX = []
     moveHistory.innerHTML = ''
+    moveHistoryX.innerHTML = ''
     prev.style.display = 'none'
     next.style.display = 'none'
     score.style.display = 'none'

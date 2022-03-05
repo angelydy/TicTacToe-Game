@@ -62,7 +62,7 @@ tiles.forEach((tile, index) => {
 
 
 //check if tile have content or not
-const checkAction = (tile) => {
+function checkAction(tile) {
   if (tile.textContent === 'X' || tile.textContent === 'O') {
     return false;
   }
@@ -73,7 +73,7 @@ const checkAction = (tile) => {
 //detailed move history
 let movesArray = []
 let movesArrayX = []
-const movesLocation = ['top left', 'top midd)le', 'top right', 'middle left', 'middle', 'middle right', 'bottom left', 'bottom middle', 'bottom right']
+const movesLocation = ['top left', 'top middle', 'top right', 'middle left', 'middle', 'middle right', 'bottom left', 'bottom middle', 'bottom right']
 const moveHistory = document.getElementById('moveHistory')
 const moveHistoryX = document.getElementById('moveHistoryX')
 function detailedHistory (index) {
@@ -92,7 +92,7 @@ function detailedHistory (index) {
 
 
 //game in action 
-const playerAction = (tile, index) => {
+function playerAction(tile, index) {
   if (checkAction(tile) && activeGame) {
     tile.textContent = currentPlayer
     board[index] = currentPlayer
@@ -113,7 +113,7 @@ const playerAction = (tile, index) => {
 
 
 //change current player
-const changePlayer = () => {
+function changePlayer() {
   if (currentPlayer === 'X') {
     currentPlayer = 'O'
     playerTwoContainer.style.border = '2px solid white'

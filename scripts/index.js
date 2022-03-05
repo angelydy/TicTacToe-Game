@@ -21,6 +21,7 @@ const playerOneName = document.getElementById('player-one-name')
 const playerTwoName = document.getElementById('player-two-name')
 
 function chooseFirstPlayer() {
+
   function displayPlayerOne() {
     resetBtn.style.display = 'block'
     activeGame = true
@@ -71,11 +72,15 @@ const checkAction = (tile) => {
 
 //detailed move history
 let movesArray = []
+const movesLocation = ['top left', 'top middle', 'top right', 'middle left', 'middle', 'middle right', 'bottom left', 'bottom middle', 'bottom right']
 const moveHistory = document.getElementById('moveHistory')
-function detailedHistory () {
-  moveHistory.style.display = 'block'
-  movesArray.push(`Player ${currentPlayer} marked the ${board.indexOf(currentPlayer)} tile\r\n`)
-  moveHistory.innerHTML = movesArray
+function detailedHistory (index) {
+    movesArray.push(`Player ${currentPlayer} marked the ${movesLocation[index]} tile <br>`)
+    moveHistory.style.display = 'block'
+    moveHistory.innerHTML = movesArray
+  //for(var a = 0; a < board.length; a++) {
+    //movesArray.push(`Player ${currentPlayer} marked the ${movesLocation[a]} tile <br>`)
+  //}
 }
 
 
@@ -93,7 +98,7 @@ const playerAction = (tile, index) => {
     historyBoard[2][0] = board[6]
     historyBoard[2][1] = board[7]
     historyBoard[2][2] = board[8]
-    detailedHistory()
+    detailedHistory(index)
     checkWin()
     changePlayer()
   }
@@ -213,10 +218,10 @@ const score = document.getElementById('score')
 const PlayerOWon = 'Player O Won'
 const PlayerXWon = 'Player X Won'
 const Tie = 'TIE'
-
 const resetBtn = document.getElementById('resetBtn')
 const playAgainBtn = document.getElementById('playAgainBtn')
 const historyBtn = document.getElementById('historyBtn')
+
 const showWinner = (player) => {
 const history = document.getElementById('history')
 const prev = document.getElementById('prev')
@@ -254,6 +259,7 @@ prev.style.display = 'none'
 
   //let the user play again
 const newGame = () => {
+  count = 0
   winnerContainer.style.display = 'none'
   playerOneContainer.style.border = 'none'
   playerTwoContainer.style.border = 'none'
@@ -329,6 +335,7 @@ const yesBtn = document.getElementById('yes-button')
 const noBtn = document.getElementById('no-button')
 
 function reset() {
+  count = 0
   activeGame = false
   askReset.style.display = 'block'
 
@@ -339,6 +346,7 @@ function reset() {
   noBtn.addEventListener('click', cancel)
 
   function resetGame() {
+    count = 0
     movesArray = []
     moveHistory.innerHTML = ''
     prev.style.display = 'none'

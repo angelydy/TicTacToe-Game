@@ -479,6 +479,7 @@ body {
 
 .moveHistory {
   display: none;
+  text-align: justify;
   background-color: transparent;
   font-family: 'Finger Paint', serif;
   font-size: 15px;
@@ -487,8 +488,8 @@ body {
   -webkit-animation: fade 2s;
           animation: fade 2s;
   top: 62vh;
-  width: 30vh;
-  height: 230px;
+  width: 35vh;
+  height: 25vh;
   color: black;
   -webkit-animation: bouce 1s;
           animation: bouce 1s;

@@ -276,6 +276,7 @@ const newGame = () => {
   playerTwoName.textContent = 'nickname';
   askContainer.style.display = 'block'
   askContainer.style.animation = '1s fromTop'
+  
   movesArray = []
   movesArrayX = []
   moveHistory.innerHTML = ''

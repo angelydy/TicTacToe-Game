@@ -297,6 +297,8 @@ playAgainBtn.addEventListener('click', newGame)
 
   //show game's history
   function gameHistory() {
+    scoreX = 0
+    scoreO = 0
     activeGame = false
     winnerContainer.style.display = 'none'
     prev.style.display = 'inline-block'

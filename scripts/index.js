@@ -42,6 +42,8 @@ function chooseFirstPlayer() {
     resetBtn.style.display = 'block'
     askContainer.style.display = "none"
     tileContainer.style.animation = 'fromTop 2s ease'
+    playerOne.textContent = `Player X`
+    playerTwo.textContent = `Player O is Playing`
     currentPlayer = 'O'
     playerOneName.contentEditable = true;
     playerTwoName.contentEditable = true;
@@ -259,7 +261,7 @@ prev.style.display = 'none'
     case Tie:
       winnerText.textContent = `TIE!`
       scoreO++
-      scoreX++
+      scoreX
       score_O.textContent = `Player O: ${scoreO}`
       score_X.textContent = `Player X: ${scoreX}`
   }
@@ -272,8 +274,6 @@ const newGame = () => {
   playerTwoContainer.style.border = 'none'
   playerOne.textContent = `Player X`
   playerTwo.textContent = `Player O`
-  playerOneName.textContent = 'nickname';
-  playerTwoName.textContent = 'nickname';
   askContainer.style.display = 'block'
   askContainer.style.animation = '1s fromTop'
   

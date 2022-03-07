@@ -287,7 +287,6 @@ const newGame = () => {
     ['','',''],
     ['','','']
   ]
-  chooseFirstPlayer()
 
   tiles.forEach(tile => {
     tile.innerHTML = ''

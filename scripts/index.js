@@ -261,7 +261,7 @@ prev.style.display = 'none'
     case Tie:
       winnerText.textContent = `TIE!`
       scoreO++
-      scoreX
+      scoreX++
       score_O.textContent = `Player O: ${scoreO}`
       score_X.textContent = `Player X: ${scoreX}`
   }

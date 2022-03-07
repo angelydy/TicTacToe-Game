@@ -382,7 +382,6 @@ function reset() {
     ]
     askContainer.style.display = 'block'
     askContainer.style.animation = '1s fromTop'
-    chooseFirstPlayer()
     resetBtn.style.display = 'none'
 
     tiles.forEach(tile => {

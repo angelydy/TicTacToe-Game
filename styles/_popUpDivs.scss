@@ -2,15 +2,17 @@
   position: absolute;
   text-align: center;
   background: url(/media/02.png);
+  top: 50%;
+  left: 50%;
   width: 50vh;
   height: 30vh;
   border-radius: 50px;
-  margin:22vh 61vh;
-  animation: bounce 2s ease infinite;
   animation-delay: 2s;
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.479);
   display: block;
   z-index: 15;
+  transform: translate(-50%, -50%);
+  animation: bounce 2.5s infinite;
 
   h3 {
     font-family: 'Finger Paint', cursive;
@@ -19,7 +21,7 @@
   }
 
   button {
-    margin: 0 10px;
+    margin: 0 1em;
     font-family: 'Luckiest Guy', serif;
     font-weight: 500;
     font-size: 20px;
@@ -43,10 +45,11 @@
   }
 
   .welcome-text {
-    width: 90vh;
+    width: 50em;
     position: absolute;
-    right: -20vh;
-    bottom: 10vh
+    top:10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
 
@@ -69,16 +72,14 @@
   align-items: center;
   justify-content: space-evenly;
   height: 50vh;
-  margin: -73vh 61vh;
+  width: 50vh;
   display: none;
-  animation: zoomIn 1.5s ease-in-out;
-  position: relative;
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.692);
 
   img {
     position: absolute;
-    top: -70px;
-    animation: bounce 2s infinite;
+    top: -9%;
+    transform: translateY(-50%);
   }
 
   p {

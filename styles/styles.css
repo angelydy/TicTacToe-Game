@@ -2,30 +2,30 @@
 @import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
 @-webkit-keyframes bounce {
   0%, 20%, 50%, 80%, 100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
   }
   40% {
-    -webkit-transform: translateY(-50px);
-            transform: translateY(-50px);
+    -webkit-transform: translate(-50%, -30%);
+            transform: translate(-50%, -30%);
   }
   60% {
-    -webkit-transform: translateY(-25px);
-            transform: translateY(-25px);
+    -webkit-transform: translate(-50%, -15%);
+            transform: translate(-50%, -15%);
   }
 }
 @keyframes bounce {
   0%, 20%, 50%, 80%, 100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
   }
   40% {
-    -webkit-transform: translateY(-50px);
-            transform: translateY(-50px);
+    -webkit-transform: translate(-50%, -30%);
+            transform: translate(-50%, -30%);
   }
   60% {
-    -webkit-transform: translateY(-25px);
-            transform: translateY(-25px);
+    -webkit-transform: translate(-50%, -15%);
+            transform: translate(-50%, -15%);
   }
 }
 
@@ -112,18 +112,21 @@ div {
   position: absolute;
   text-align: center;
   background: url(/media/02.png);
+  top: 50%;
+  left: 50%;
   width: 50vh;
   height: 30vh;
   border-radius: 50px;
-  margin: 22vh 61vh;
-  -webkit-animation: bounce 2s ease infinite;
-          animation: bounce 2s ease infinite;
   -webkit-animation-delay: 2s;
           animation-delay: 2s;
   -webkit-box-shadow: 0 0 50px rgba(0, 0, 0, 0.479);
           box-shadow: 0 0 50px rgba(0, 0, 0, 0.479);
   display: block;
   z-index: 15;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-animation: bounce 2.5s infinite;
+          animation: bounce 2.5s infinite;
 }
 
 .ask-player h3, .ask-reset h3, .show-winner h3 {
@@ -133,7 +136,7 @@ div {
 }
 
 .ask-player button, .ask-reset button, .show-winner button {
-  margin: 0 10px;
+  margin: 0 1em;
   font-family: 'Luckiest Guy', serif;
   font-weight: 500;
   font-size: 20px;
@@ -159,10 +162,12 @@ div {
 }
 
 .ask-player .welcome-text, .ask-reset .welcome-text, .show-winner .welcome-text {
-  width: 90vh;
+  width: 50em;
   position: absolute;
-  right: -20vh;
-  bottom: 10vh;
+  top: 10%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .resetBtn {
@@ -193,20 +198,17 @@ div {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   height: 50vh;
-  margin: -73vh 61vh;
+  width: 50vh;
   display: none;
-  -webkit-animation: zoomIn 1.5s ease-in-out;
-          animation: zoomIn 1.5s ease-in-out;
-  position: relative;
   -webkit-box-shadow: 0 0 50px rgba(0, 0, 0, 0.692);
           box-shadow: 0 0 50px rgba(0, 0, 0, 0.692);
 }
 
 .show-winner img {
   position: absolute;
-  top: -70px;
-  -webkit-animation: bounce 2s infinite;
-          animation: bounce 2s infinite;
+  top: -9%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 .show-winner p {
@@ -304,7 +306,7 @@ div {
 }
 
 .player-one-img, .player-two-img {
-  padding-left: 50px;
+  padding: 0 3em;
 }
 
 .container {
@@ -318,7 +320,7 @@ div {
   height: 60vh;
   margin: 15vh 55vh;
   border-radius: 20px;
-  padding: 10px;
+  padding: 1rem;
   border: 2px solid white;
   -webkit-box-shadow: 0 0 50px rgba(0, 0, 0, 0.692);
           box-shadow: 0 0 50px rgba(0, 0, 0, 0.692);
@@ -329,11 +331,11 @@ div {
 .container .tile {
   -webkit-box-shadow: 0 0px 20px 0 black;
           box-shadow: 0 0px 20px 0 black;
-  margin: 6px;
+  margin: 0.5rem;
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.438);
   font-family: 'Finger Paint', cursive;
-  font-size: 100px;
+  font-size: 5em;
   text-align: center;
 }
 
@@ -442,24 +444,46 @@ div {
             box-sizing: border-box;
   }
   body .player-one {
-    position: absolute;
+    position: relative;
     top: 0;
-    left: 40vh;
+    left: 30%;
+    width: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border-radius: 0;
   }
   body .player-two {
     position: relative;
     top: 120vh;
-    left: 40vh;
+    left: 30%;
+    width: 50%;
+    border-radius: 0;
   }
   body .ask-player, body .ask-reset, body .show-winner {
-    position: absolute;
-    top: 45vh;
-    left: -35vh;
+    width: 90%;
+  }
+  body .ask-player .welcome-text, body .ask-reset .welcome-text, body .show-winner .welcome-text {
+    width: 100%;
+  }
+  body .player-one-img, body .player-two-img {
+    margin: 0 2.5em;
   }
   body .container {
     position: relative;
     top: 0;
-    left: -35vh;
+    margin: 0 auto;
+    width: auto;
   }
   body .mute, body .unmute {
     position: absolute;

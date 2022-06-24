@@ -6,27 +6,43 @@
     box-sizing: border-box;
 
     .player-one {
-      position: absolute;
+      position: relative;
       top: 0;
-      left: 40vh;
+      left: 30%;
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: 0;
     }
 
     .player-two {
       position: relative;
       top: 120vh;
-      left: 40vh;
+      left: 30%;
+      width: 50%;
+      border-radius: 0;
+
     }
 
     .ask-player, .ask-reset, .show-winner {
-      position: absolute;
-      top: 45vh;
-      left: -35vh;
+      width: 90%;
+      
+      .welcome-text {
+        width: 100%;
+      }
+    }
+
+    .player-one-img, .player-two-img{
+      margin: 0 2.5em;
     }
 
     .container {
       position: relative;
       top: 0;
-      left: -35vh;
+      margin: 0 auto;
+      width: auto;
     }
 
     .mute, .unmute {

@@ -23,6 +23,8 @@ const playerTwoName = document.getElementById('player-two-name')
 function chooseFirstPlayer() {
 
   function displayPlayerOne() {
+    playerOneContainer.style.display = "block"
+    playerTwoContainer.style.display = "block"
     resetBtn.style.display = 'block'
     activeGame = true
     askContainer.style.display = "none"
@@ -38,6 +40,8 @@ function chooseFirstPlayer() {
   xBtn.addEventListener('click', displayPlayerOne)
   
   function displayPlayerTwo() {
+    playerOneContainer.style.display = "block"
+    playerTwoContainer.style.display = "block"
     activeGame = true
     resetBtn.style.display = 'block'
     askContainer.style.display = "none"

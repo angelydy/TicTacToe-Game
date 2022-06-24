@@ -202,6 +202,8 @@ div {
   display: none;
   -webkit-box-shadow: 0 0 50px rgba(0, 0, 0, 0.692);
           box-shadow: 0 0 50px rgba(0, 0, 0, 0.692);
+  -webkit-animation: fade 1s;
+          animation: fade 1s;
 }
 
 .show-winner img {
@@ -281,9 +283,11 @@ div {
   border-radius: 45px;
   -webkit-box-shadow: 0 0px 20px 0 black;
           box-shadow: 0 0px 20px 0 black;
+  display: none;
 }
 
 .player-two {
+  display: none;
   position: absolute;
   width: 180px;
   height: 230px;
@@ -444,13 +448,10 @@ div {
             box-sizing: border-box;
   }
   body .player-one {
-    position: relative;
-    top: 0;
-    left: 30%;
-    width: 50%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    position: absolute;
+    top: 50rem;
+    left: 2rem;
+    width: 10rem;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -461,14 +462,20 @@ div {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    border-radius: 0;
+    border-radius: 20px;
+  }
+  body .player-one img {
+    display: none;
   }
   body .player-two {
-    position: relative;
-    top: 120vh;
-    left: 30%;
-    width: 50%;
-    border-radius: 0;
+    position: absolute;
+    top: 50rem;
+    left: 14rem;
+    width: 10rem;
+    border-radius: 20px;
+  }
+  body .player-two img {
+    display: none;
   }
   body .ask-player, body .ask-reset, body .show-winner {
     width: 90%;
@@ -484,11 +491,25 @@ div {
     top: 0;
     margin: 0 auto;
     width: auto;
+    padding: 0;
+  }
+  body .reset button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
   }
   body .mute, body .unmute {
     position: absolute;
     top: 0;
     left: 10px;
+  }
+  body #moveHistory, body #moveHistoryX {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
   }
 }
 

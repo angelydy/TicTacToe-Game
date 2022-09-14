@@ -114,7 +114,7 @@ div {
   background: url(/media/02.png);
   top: 50%;
   left: 50%;
-  width: 50vh;
+  width: 30vw;
   height: 30vh;
   border-radius: 50px;
   -webkit-animation-delay: 2s;
@@ -320,9 +320,11 @@ div {
       grid-template-columns: repeat(3, 1fr);
   -ms-grid-rows: (1fr)[3];
       grid-template-rows: repeat(3, 1fr);
-  width: 60vh;
+  max-width: 60vh;
   height: 60vh;
-  margin: 15vh 55vh;
+  margin-top: 13vh;
+  margin-left: auto;
+  margin-right: auto;
   border-radius: 20px;
   padding: 1rem;
   border: 2px solid white;
@@ -335,7 +337,7 @@ div {
 .container .tile {
   -webkit-box-shadow: 0 0px 20px 0 black;
           box-shadow: 0 0px 20px 0 black;
-  margin: 0.5rem;
+  margin: 10px;
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.438);
   font-family: 'Finger Paint', cursive;
@@ -520,6 +522,7 @@ body {
   background-attachment: fixed;
   margin: 0;
   padding: 0;
+  position: relative;
 }
 
 .moveHistory {

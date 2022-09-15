@@ -1,7 +1,7 @@
 .mute {
-  position: absolute;
-  right: 15vh;
-  bottom: 5vh;
+  position: fixed;
+  bottom: 3vh;
+  right: 5vw;
 
   &:hover {
     cursor: pointer;

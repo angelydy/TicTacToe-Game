@@ -12,7 +12,6 @@
   display: block;
   z-index: 15;
   transform: translate(-50%, -50%);
-  animation: bounce 2.5s infinite;
 
   h3 {
     font-family: 'Finger Paint', cursive;
@@ -59,7 +58,6 @@
 
 .ask-reset {
   display: none;
-  margin: -61vh 61vh;
 
   button {
     margin: 0px 20px;

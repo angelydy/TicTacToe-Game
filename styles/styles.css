@@ -125,8 +125,6 @@ div {
   z-index: 15;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  -webkit-animation: bounce 2.5s infinite;
-          animation: bounce 2.5s infinite;
 }
 
 .ask-player h3, .ask-reset h3, .show-winner h3 {
@@ -176,7 +174,6 @@ div {
 
 .ask-reset {
   display: none;
-  margin: -61vh 61vh;
 }
 
 .ask-reset button {
@@ -275,7 +272,7 @@ div {
   width: 180px;
   height: 230px;
   left: 10vh;
-  top: 30vh;
+  top: 20vh;
   -webkit-backdrop-filter: url(filters.svg#filter) blur(4px) brightness(80%);
           backdrop-filter: url(filters.svg#filter) blur(4px) brightness(80%);
   -webkit-animation: fade 2s;
@@ -297,7 +294,7 @@ div {
   -webkit-animation: fade 2s;
           animation: fade 2s;
   border-radius: 45px;
-  top: 30vh;
+  top: 20vh;
   -webkit-box-shadow: 0 0px 20px 0 black;
           box-shadow: 0 0px 20px 0 black;
 }
@@ -351,9 +348,9 @@ div {
 }
 
 .mute {
-  position: absolute;
-  right: 15vh;
-  bottom: 5vh;
+  position: fixed;
+  bottom: 3vh;
+  right: 5vw;
 }
 
 .mute:hover {
@@ -378,8 +375,9 @@ div {
 .reset {
   text-align: center;
   position: absolute;
-  left: 80vh;
-  bottom: 5vh;
+  left: 46vw;
+  top: 70vh;
+  translate: translate(-50%, -50%);
 }
 
 .reset button {
@@ -408,8 +406,8 @@ div {
 
 .history {
   position: absolute;
-  top: 80vh;
-  left: 41vh;
+  top: 70vh;
+  left: 38vh;
   display: none;
   -webkit-animation: zoomIn 1s;
           animation: zoomIn 1s;
@@ -535,7 +533,7 @@ body {
   right: 5vh;
   -webkit-animation: fade 2s;
           animation: fade 2s;
-  top: 62vh;
+  top: 50vh;
   width: 35vh;
   height: 25vh;
   color: white;
@@ -556,7 +554,7 @@ body {
   left: 5vh;
   -webkit-animation: fade 2s;
           animation: fade 2s;
-  top: 62vh;
+  top: 50vh;
   width: 35vh;
   height: 25vh;
   color: white;

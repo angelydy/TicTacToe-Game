@@ -279,7 +279,7 @@ const newGame = () => {
   playerOne.textContent = `Player X`
   playerTwo.textContent = `Player O`
   askContainer.style.display = 'block'
-  askContainer.style.animation = '1s fromTop'
+  askContainer.style.animation = '1s fade'
   
   movesArray = []
   movesArrayX = []
@@ -307,7 +307,8 @@ playAgainBtn.addEventListener('click', newGame)
     winnerContainer.style.display = 'none'
     prev.style.display = 'inline-block'
     next.style.display = 'inline-block'
-    history.style.display = 'block'
+    history.style.display = 'flex'
+    history.style.justifyContent = 'space-between';
     resetBtn.style.display = 'block'
 
     count = 0
@@ -385,7 +386,7 @@ function reset() {
       ['','','']
     ]
     askContainer.style.display = 'block'
-    askContainer.style.animation = '1s fromTop'
+    askContainer.style.animation = '1s fade'
     resetBtn.style.display = 'none'
 
     tiles.forEach(tile => {

@@ -1,12 +1,14 @@
 .history {
   position: absolute;
   top: 70vh;
-  left: 20vw;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: none;
-  animation: zoomIn 1s;
+  animation: fade 1s;
+  max-width: 500px;
+  column-gap: 20vw;
 
   button {
-    margin: 0 18vh;
     font-family: 'Luckiest Guy', serif;
     font-weight: 500;
     font-size: 20px;

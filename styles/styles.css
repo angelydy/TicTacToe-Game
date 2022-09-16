@@ -414,7 +414,7 @@ div {
   display: none;
   -webkit-animation: fade 1s;
           animation: fade 1s;
-  max-width: 500px;
+  max-width: 50vw;
   -webkit-column-gap: 20vw;
           column-gap: 20vw;
 }
